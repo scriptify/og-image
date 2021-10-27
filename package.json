@@ -1,21 +1,25 @@
 {
+  "name": "og-image",
+  "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "14.x"
-  },
   "scripts": {
-    "build": "tsc -p api/tsconfig.json"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
+    "next": "12.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "chrome-aws-lambda": "7.0.0",
-    "marked": "2.0.0",
-    "puppeteer-core": "7.0.0",
-    "twemoji": "13.0.1"
+    "puppeteer-core": "7.0.0"
   },
   "devDependencies": {
-    "@types/marked": "1.2.2",
-    "@types/puppeteer": "5.4.3",
-    "@types/puppeteer-core": "5.4.0",
-    "typescript": "4.1.5"
+    "@types/node": "16.11.6",
+    "@types/react": "17.0.33",
+    "eslint": "7",
+    "eslint-config-next": "12.0.1",
+    "typescript": "4.4.4"
   }
 }

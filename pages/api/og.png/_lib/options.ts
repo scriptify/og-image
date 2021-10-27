@@ -18,7 +18,7 @@ export async function getOptions(isDev: boolean) {
     options = {
       args: [],
       executablePath: exePath,
-      headless: false,
+      headless: true,
     };
   } else {
     options = {

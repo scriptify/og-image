@@ -1,68 +1,34 @@
-<a href="https://vercel.com/new/project?template=vercel/og-image"><img width="128" src="https://vercel.com/button" align="right"></a>
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# [Open Graph Image as a Service](https://og-image.vercel.app)
+## Getting Started
 
-<a href="https://twitter.com/vercel">
-    <img align="right" src="https://og-image.vercel.app/tweet.png" height="300" />
-</a>
+First, run the development server:
 
-Serverless service that generates dynamic Open Graph images that you can embed in your `<meta>` tags.
-
-For each keystroke, headless chromium is used to render an HTML page and take a screenshot of the result which gets cached.
-
-See the image embedded in the tweet for a real use case.
-
-
-## What is an Open Graph Image?
-
-Have you ever posted a hyperlink to Twitter, Facebook, or Slack and seen an image popup?
-How did your social network know how to "unfurl" the URL and get an image?
-The answer is in your `<head>`.
-
-The [Open Graph protocol](http://ogp.me) says you can put a `<meta>` tag in the `<head>` of a webpage to define this image.
-
-It looks like the following:
-
-```html
-<head>
-  <title>Title</title>
-  <meta property="og:image" content="http://example.com/logo.jpg" />
-</head>
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-## Why use this service?
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The short answer is that it would take a long time to painstakingly design an image for every single blog post and every single documentation page. And we don't want the exact same image for every blog post because that wouldn't make the article stand out when it was shared to Twitter. 
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-That's where `og-image.vercel.app` comes in. We can simply pass the title of our blog post to our generator service and it will generate the image for us on the fly!
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-It looks like the following:
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-```html
-<head>
-  <title>Hello World</title>
-  <meta property="og:image" content="https://og-image.vercel.app/Hello%20World.png" />
-</head>
-```
+## Learn More
 
-Now try changing the text `Hello%20World` to the title of your choosing and watch the magic happen ✨
+To learn more about Next.js, take a look at the following resources:
 
-## Deploy your own
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You'll want to fork this repository and deploy your own image generator.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-1. Click the fork button at the top right of GitHub
-2. Clone the repo to your local machine with `git clone URL_OF_FORKED_REPO_HERE`
-3. Change directory with `cd og-image`
-4. Make changes by swapping out images, changing colors, etc (see [contributing](https://github.com/vercel/og-image/blob/main/CONTRIBUTING.md) for more info)
-5. Remove all configuration inside `vercel.json` besides `rewrites`
-6. Run locally with `vercel dev` and visit [localhost:3000](http://localhost:3000)  (if nothing happens, run `npm install -g vercel`)
-7. Deploy to the cloud by running `vercel` and you'll get a unique URL
-8. Setup [GitHub](https://vercel.com/github) to auto-deploy on push
+## Deploy on Vercel
 
-Once you have an image generator that sparks joy, you can setup [automatic GitHub](https://vercel.com/github) deployments so that pushing to master will deploy to production! 🚀
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Authors
-
-- Steven ([@styfle](https://twitter.com/styfle)) - [Vercel](https://vercel.com)
-- Evil Rabbit ([@evilrabbit](https://twitter.com/evilrabbit_)) - [Vercel](https://vercel.com)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
