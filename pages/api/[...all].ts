@@ -11,7 +11,7 @@ export default async function handler(
   try {
     const splitted = req.url?.split("/") ?? [];
     const ipfsHash = splitted[splitted.length - 1].replace(".png", "");
-    const fileOutPath = `./public/og/${ipfsHash}.png`;
+    const fileOutPath = `/tmp/${ipfsHash}.png`;
     const file = await createOgImageFromHipster(ipfsHash, fileOutPath);
 
     res.statusCode = 200;
