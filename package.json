@@ -9,17 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "follow-redirects": "^1.14.4",
     "next": "12.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "chrome-aws-lambda": "7.0.0",
-    "puppeteer-core": "7.0.0"
+    "sharp": "^0.29.2"
   },
   "devDependencies": {
+    "@types/follow-redirects": "^1.13.1",
     "@types/node": "16.11.6",
-    "@types/puppeteer": "^5.4.4",
-    "@types/puppeteer-core": "^5.4.0",
     "@types/react": "17.0.33",
+    "@types/sharp": "^0.29.2",
     "eslint": "7",
     "eslint-config-next": "12.0.1",
     "typescript": "4.4.4"

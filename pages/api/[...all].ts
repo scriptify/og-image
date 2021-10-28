@@ -1,7 +1,6 @@
 import { IncomingMessage, ServerResponse } from "http";
-import { parseRequest } from "./_lib/parser";
-import { getScreenshot } from "./_lib/chromium";
-import { getHtml } from "./_lib/template";
+import fs from "fs";
+import { createOgImageFromHipster } from "../../_og-image-creator";
 
 const isDev = !process.env.AWS_REGION;
 const isHtmlDebug = false;
@@ -11,14 +10,13 @@ export default async function handler(
   res: ServerResponse
 ) {
   try {
-    const parsedReq = parseRequest(req);
-    const html = getHtml(parsedReq);
-    if (isHtmlDebug) {
-      res.setHeader("Content-Type", "text/html");
-      res.end(html);
-      return;
-    }
-    const file = await getScreenshot(html, "png", isDev);
+    const splitted = req.url?.split("/") ?? [];
+    const ipfsHash = splitted[splitted.length - 1].replace(".png", "");
+    const fileOutPath = `./public/og/${ipfsHash}.png`;
+    await createOgImageFromHipster(ipfsHash, fileOutPath);
+
+    const file = await fs.promises.readFile(fileOutPath);
+
     res.statusCode = 200;
     res.setHeader("Content-Type", `image/png`);
     res.setHeader(
