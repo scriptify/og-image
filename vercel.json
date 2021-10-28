@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/hello.ts": {
+    "hello.ts": {
       "includeFiles": "public/**"
     }
   }
