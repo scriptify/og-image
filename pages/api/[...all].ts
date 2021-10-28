@@ -1,5 +1,4 @@
 import { IncomingMessage, ServerResponse } from "http";
-import fs from "fs";
 import { createOgImageFromHipster } from "../../_og-image-creator";
 
 const isDev = !process.env.AWS_REGION;
