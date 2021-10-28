@@ -52,14 +52,16 @@ export async function createOgImageFromHipster(
     },
   ]);
 
+  const buffer = await bgImage.toBuffer();
+
   (async () => {
-    // Save file to cache it for  late usage
+    // Save file to cache it for later usage
     try {
-      await bgImage.toFile(fileOutPath);
+      await fs.promises.writeFile(fileOutPath, buffer);
     } catch (e) {
       console.error("Failed to persist file", fileOutPath, e);
     }
   })();
 
-  return bgImage.toBuffer();
+  return buffer;
 }
