@@ -23,7 +23,7 @@ export async function createOgImageFromHipster(
   if (!(await exists(bgImagePath))) {
     // Download image once
     console.info(`Download bg image as it does not exist yet...`);
-    await downloadImage("http://ogster.vercel.app/og-bg.png", bgImagePath);
+    await downloadImage("https://ogster.vercel.app/og-bg.png", bgImagePath);
   }
 
   const downloadedImgPath = path.join(TMP_FOLDER, `${ipfsHash}.png`);
