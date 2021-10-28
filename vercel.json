@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/[...all].ts": {
+    "api/**/*.ts": {
       "includeFiles": "public/**"
     }
   }
