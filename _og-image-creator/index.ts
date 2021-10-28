@@ -3,7 +3,7 @@ import fs from "fs";
 import sharp from "sharp";
 
 import { exists } from "./fs";
-import { downloadFromIpfs } from "./node-download";
+import { downloadFromIpfs, downloadImage } from "./node-download";
 
 export async function createOgImageFromHipster(
   ipfsHash: string,
@@ -19,6 +19,13 @@ export async function createOgImageFromHipster(
     await fs.promises.mkdir(TMP_FOLDER);
   }
 
+  const bgImagePath = path.join(TMP_FOLDER, "og-bg.png");
+  if (!(await exists(bgImagePath))) {
+    // Download image once
+    console.info(`Download bg image as it does not exist yet...`);
+    await downloadImage("http://ogster.vercel.app/og-bg.png", bgImagePath);
+  }
+
   const downloadedImgPath = path.join(TMP_FOLDER, `${ipfsHash}.png`);
 
   if (!(await exists(downloadedImgPath))) {
@@ -26,7 +33,7 @@ export async function createOgImageFromHipster(
   }
 
   const hipsterImg = sharp(downloadedImgPath);
-  const bgImage = sharp(path.join(__dirname, "public/og-bg.png"));
+  const bgImage = sharp(bgImagePath);
 
   const { height: bgHeight = 0, width: bgWidth = 0 } = await bgImage.metadata();
 
