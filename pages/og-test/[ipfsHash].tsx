@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps<
 export default function OgTestPage({
   ipfsHash,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const ogImageUrl = `http://ogster.vercel.app/api/${ipfsHash}.png`;
+  const ogImageUrl = `https://og-image.vercel.app/${ipfsHash}`;
 
   return (
     <>
