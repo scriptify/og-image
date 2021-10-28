@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "[...all].ts": {
+      "includeFiles": "public/**"
+    }
+  }
+}

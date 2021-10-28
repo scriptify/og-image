@@ -13,9 +13,7 @@ export default async function handler(
     const splitted = req.url?.split("/") ?? [];
     const ipfsHash = splitted[splitted.length - 1].replace(".png", "");
     const fileOutPath = `./public/og/${ipfsHash}.png`;
-    await createOgImageFromHipster(ipfsHash, fileOutPath);
-
-    const file = await fs.promises.readFile(fileOutPath);
+    const file = await createOgImageFromHipster(ipfsHash, fileOutPath);
 
     res.statusCode = 200;
     res.setHeader("Content-Type", `image/png`);
